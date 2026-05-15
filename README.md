@@ -1,51 +1,51 @@
-# 🏎️ F1 Miami Grand Prix 2026: Predictive Ensemble Modeling
+# 🏎️ F1 Miami Grand Prix 2026: Predictive Ensemble Framework
 ### Advanced Analytics & Big Data | SGH Warsaw School of Economics
 
 ## 📊 Project Overview
-This project develops a robust predictive framework to forecast the Top 5 finishers of the **2026 Formula 1 Miami Grand Prix**. By utilizing an ensemble of five distinct data science methodologies, the model compensates for the inherent volatility and "small sample size" issues common in early-season sports forecasting.
-
-The objective was to move beyond a single model and create a consensus prediction backed by rule-based scoring, machine learning, and probabilistic simulations.
+This project develops a robust predictive framework to forecast the Top 5 finishers of the **2026 Formula 1 Miami Grand Prix**. The core philosophy of this study is that a single model is insufficient for the high-volatility environment of F1. Instead, we implement a **consensus-based ensemble** that balances human domain expertise with state-of-the-art machine learning.
 
 ---
 
-## 🛠️ The 5-Method Ensemble Architecture
-To maximize predictive accuracy, the project implements an **Ensemble Approach**:
+## 🛠️ The 5-Method Predictive Pipeline
+To maximize accuracy and minimize model bias, the final forecast is derived from five distinct methodologies, each selected for a specific statistical purpose:
 
-1.  **Rule-Based Scoring (Current Form):** A weighted matrix prioritizing recent 2026 performance and Constructor standings.
-2.  **Historical Track Specialist Analysis:** A weighted decay model looking at driver performance at the Miami International Autodrome from 2022–2025.
-3.  **Machine Learning (Random Forest):** A classification approach trained on historical race features to identify high-probability Top 5 candidates.
-4.  **Elo Rating System:** A dynamic "strength-of-schedule" ranking that updates driver quality based on head-to-head results.
-5.  **Monte Carlo Simulation:** 10,000 iterations simulating race-day variance, safety cars, and strategy errors to generate probability distributions for finishing positions.
+| Method | Strategic "Why" |
+| :--- | :--- |
+| **Weighted Scoring** | Serves as a **transparent baseline**; allows us to manually calibrate the importance of current season form vs. car performance. |
+| **Linear Regression** | Enables the model to **automatically learn feature importance**, removing manual bias in determining which variables drive success. |
+| **Random Forest** | Selected for its ability to handle **complex non-linear relationships** that traditional straight-line models often miss. |
+| **XGBoost** | The **industry standard for tabular data**; utilized for its high accuracy and efficiency in small-scale sports datasets. |
+| **Monte Carlo Simulation** | Moves beyond "deterministic guesses" by **simulating the race 10,000 times**, providing a realistic probability distribution of outcomes. |
 
 ---
 
 ## 🚀 Key Features
-* **Multi-Method Consensus:** The final forecast is an ensemble of all five methods, reducing the risk of "overfitting" to a single statistical quirk.
-* **2026 Regulation Modeling:** Accounts for the significant technical regulation changes of 2026, giving higher weight to current car performance over historical data.
-* **Probabilistic Outcomes:** Provides specific probability percentages (e.g., "96% Top-5 probability for Russell") rather than just a flat list.
-* **Strategic Limitation Analysis:** Includes a detailed section on model constraints, such as "Sprint Weekend" formats and unmodeled "Safety Car" events.
+* **Multi-Method Consensus:** Final predictions are a weighted ensemble, neutralizing the weaknesses of any single algorithm.
+* **Probabilistic Outcomes:** Rather than a static list, the model generates "Win/Top-5 Probabilities" (e.g., George Russell at 96% confidence).
+* **High-Stakes Application:** Designed specifically for the 2026 technical regulation era, prioritizing current constructor standings and recent momentum.
 
 ---
 
 ## 🏁 Final Forecast (Consensus Top 5)
 Based on the ensemble output, the high-probability finishers for the 2026 Miami GP are:
 
-1.  **George Russell** (Mercedes) - *96% Prob.*
-2.  **Lewis Hamilton** (Mercedes) - *93% Prob.*
-3.  **Charles Leclerc** (Ferrari) - *89% Prob.*
+1.  **George Russell** (Mercedes) — *96% Prob.*
+2.  **Lewis Hamilton** (Mercedes) — *93% Prob.*
+3.  **Charles Leclerc** (Ferrari) — *89% Prob.*
 4.  **Oscar Piastri** (McLaren)
 5.  **Pierre Gasly** (Alpine)
 
 ---
 
 ## 📂 Project Structure
-* `F1 Miami.ipynb`: Full research notebook including data cleaning, method implementation, and ensemble logic.
-* `data/`: Curated dataset including 2026 Constructor points and 2022-2025 Miami historical results.
-* `visualizations/`: Plots showing the convergence of different model methods.
+* `F1 Miami.ipynb`: Full research notebook including feature engineering, model training, and ensemble logic.
+* `data/`: Curated dataset including 2026 Constructor points and historical Miami GP results (2022-2025).
+* `outputs/`: Visualization plots showing the convergence of ML predictions and Monte Carlo distributions.
 
 ---
 
 ## 💻 Tech Stack
 * **Language:** Python
-* **Libraries:** Pandas, NumPy, Scikit-Learn, Matplotlib
-* **Methods:** Random Forest, Monte Carlo Simulation, XGBoost, Weighted Scoring.
+* **ML Frameworks:** Scikit-Learn, XGBoost
+* **Simulation:** NumPy (Vectorized Monte Carlo)
+* **Data Processing:** Pandas
