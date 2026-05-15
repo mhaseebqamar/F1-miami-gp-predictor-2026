@@ -11,7 +11,7 @@ To maximize accuracy and minimize model bias, the final forecast is derived from
 
 | Method | Strategic "Why" |
 | :--- | :--- |
-| **Weighted Scoring** | Serves as a **transparent baseline**; allows us to manually calibrate the importance of current season form vs. car performance. |
+| **Weighted Scoring** | Serves as a **transparent baseline**; allows for manual calibration of current season form vs. car performance. |
 | **Linear Regression** | Enables the model to **automatically learn feature importance**, removing manual bias in determining which variables drive success. |
 | **Random Forest** | Selected for its ability to handle **complex non-linear relationships** that traditional straight-line models often miss. |
 | **XGBoost** | The **industry standard for tabular data**; utilized for its high accuracy and efficiency in small-scale sports datasets. |
@@ -19,28 +19,30 @@ To maximize accuracy and minimize model bias, the final forecast is derived from
 
 ---
 
-## 🚀 Key Features
-* **Multi-Method Consensus:** Final predictions are a weighted ensemble, neutralizing the weaknesses of any single algorithm.
-* **Probabilistic Outcomes:** Rather than a static list, the model generates "Win/Top-5 Probabilities" (e.g., George Russell at 96% confidence).
-* **High-Stakes Application:** Designed specifically for the 2026 technical regulation era, prioritizing current constructor standings and recent momentum.
+## 🏁 Final Forecast: Predicted Top 5
+Based on the ensemble output and current 2026 season data, the high-probability finishers for the Miami GP are:
+
+| Place | Driver | Team | Key Justification |
+| :--- | :--- | :--- | :--- |
+| 🥇 **1st** | **Kimi Antonelli** | Mercedes | Championship leader (72 pts); won last 2 consecutive races; dominant Mercedes car (135 constructor pts). |
+| 🥈 **2nd** | **George Russell** | Mercedes | P2 in standings (63 pts); winner in Australia; benefits from the same dominant W17 chassis. |
+| 🥉 **3rd** | **Charles Leclerc** | Ferrari | P3 in standings (49 pts); high consistency with podiums in all 3 opening races. |
+| 🏅 **4th** | **Lewis Hamilton** | Ferrari | P4 in standings (41 pts); most experienced driver on the grid with 6 Miami GP starts. |
+| 🏅 **5th** | **Pierre Gasly** | Alpine | Consistent points scorer; P7 in Japan; underrated pace given Alpine’s competitive mid-season upgrades. |
 
 ---
 
-## 🏁 Final Forecast (Consensus Top 5)
-Based on the ensemble output, the high-probability finishers for the 2026 Miami GP are:
-
-1.  **George Russell** (Mercedes) — *96% Prob.*
-2.  **Lewis Hamilton** (Mercedes) — *93% Prob.*
-3.  **Charles Leclerc** (Ferrari) — *89% Prob.*
-4.  **Oscar Piastri** (McLaren)
-5.  **Pierre Gasly** (Alpine)
+## 🚀 Key Insights & Limitations
+* **Mercedes Dominance:** The Mercedes car advantage (135 pts vs. Ferrari's 90) is currently the single strongest predictor of success in the 2026 regulation era.
+* **Probabilistic Confidence:** Monte Carlo simulations show extremely high confidence (93%+) for the top 3 finishers, with significant variance emerging at P4 and P5.
+* **Model Constraints:** As this was conducted early in the season, the small sample size (3 races) remains a limitation. The model also accounts for "Sprint Weekend" variance through probabilistic weighting.
 
 ---
 
 ## 📂 Project Structure
 * `F1 Miami.ipynb`: Full research notebook including feature engineering, model training, and ensemble logic.
 * `data/`: Curated dataset including 2026 Constructor points and historical Miami GP results (2022-2025).
-* `outputs/`: Visualization plots showing the convergence of ML predictions and Monte Carlo distributions.
+* `visualizations/`: Plots showing the convergence of ML predictions and Monte Carlo distributions.
 
 ---
 
