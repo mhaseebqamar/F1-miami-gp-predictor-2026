@@ -1,60 +1,51 @@
-🏎️ 2026 Miami Grand Prix Predictive Modeling
+# 🏎️ F1 Miami Grand Prix 2026: Predictive Ensemble Modeling
+### Advanced Analytics & Big Data | SGH Warsaw School of Economics
 
-Project Overview
-This project focuses on predicting the outcome of the 2026 Miami Grand Prix using an ensemble of machine learning models. Predicting F1 results early in a season is a "small data" challenge. This repository demonstrates how to use Feature Engineering and Probabilistic Simulations to overcome data scarcity.  
+## 📊 Project Overview
+This project develops a robust predictive framework to forecast the Top 5 finishers of the **2026 Formula 1 Miami Grand Prix**. By utilizing an ensemble of five distinct data science methodologies, the model compensates for the inherent volatility and "small sample size" issues common in early-season sports forecasting.
 
+The objective was to move beyond a single model and create a consensus prediction backed by rule-based scoring, machine learning, and probabilistic simulations.
 
-🧠 The Ensemble Approach
-To ensure a robust prediction, I utilized five distinct analytical methods:
+---
 
-Weighted Scoring: Domain-driven baseline.
+## 🛠️ The 5-Method Ensemble Architecture
+To maximize predictive accuracy, the project implements an **Ensemble Approach**:
 
-Linear Regression: Historical trend analysis.
+1.  **Rule-Based Scoring (Current Form):** A weighted matrix prioritizing recent 2026 performance and Constructor standings.
+2.  **Historical Track Specialist Analysis:** A weighted decay model looking at driver performance at the Miami International Autodrome from 2022–2025.
+3.  **Machine Learning (Random Forest):** A classification approach trained on historical race features to identify high-probability Top 5 candidates.
+4.  **Elo Rating System:** A dynamic "strength-of-schedule" ranking that updates driver quality based on head-to-head results.
+5.  **Monte Carlo Simulation:** 10,000 iterations simulating race-day variance, safety cars, and strategy errors to generate probability distributions for finishing positions.
 
-Random Forest: Capturing complex non-linear relationships.
+---
 
-XGBoost: High-performance gradient boosting for tabular data.
+## 🚀 Key Features
+* **Multi-Method Consensus:** The final forecast is an ensemble of all five methods, reducing the risk of "overfitting" to a single statistical quirk.
+* **2026 Regulation Modeling:** Accounts for the significant technical regulation changes of 2026, giving higher weight to current car performance over historical data.
+* **Probabilistic Outcomes:** Provides specific probability percentages (e.g., "96% Top-5 probability for Russell") rather than just a flat list.
+* **Strategic Limitation Analysis:** Includes a detailed section on model constraints, such as "Sprint Weekend" formats and unmodeled "Safety Car" events.
 
-Monte Carlo Simulation: 10,000 iterations to account for race-day randomness (DNFs, Safety Cars).
+---
 
+## 🏁 Final Forecast (Consensus Top 5)
+Based on the ensemble output, the high-probability finishers for the 2026 Miami GP are:
 
-🛠️ Feature Engineering
+1.  **George Russell** (Mercedes) - *96% Prob.*
+2.  **Lewis Hamilton** (Mercedes) - *93% Prob.*
+3.  **Charles Leclerc** (Ferrari) - *89% Prob.*
+4.  **Oscar Piastri** (McLaren)
+5.  **Pierre Gasly** (Alpine)
 
-The "secret sauce" of this model lies in the custom metrics engineered to handle the 2026 season's early data:
+---
 
-Recent Form: A decay-weighted average of the first three races (eg, Japan GP).
+## 📂 Project Structure
+* `F1 Miami.ipynb`: Full research notebook including data cleaning, method implementation, and ensemble logic.
+* `data/`: Curated dataset including 2026 Constructor points and 2022-2025 Miami historical results.
+* `visualizations/`: Plots showing the convergence of different model methods.
 
-Constructor Strength: A coefficient representing the car's 70% impact on race pace.
+---
 
-Reliability Index: Quantitative penalty based on historical DNF (Did Not Finish) frequency.
-
-
-🏆 Key Findings: The "Antonelli" Surge
-
-While traditional metrics favored veterans, the XGBoost and Weighted Scoring layers identified Kimi Antonelli (Mercedes) as the predictive winner. This was driven by:
-
-High "Momentum" scores from the opening rounds.
-
-Mercedes' technical upgrade trajectory.
-
-Track-specific suitability for the W17 chassis.
-
-
-🚀 Technical Stack
-
-Language: Python
-
-Libraries: pandas , scikit-learn, xgboost, numpy,matplotlib
-
-Environment: Developed as part of the Advanced Analytics curriculum.  
-
-
-📂 File Structure
-
-data/: Cleaned F1 datasets.
-
-notebooks/: Step-by-step EDA and Model Training.
-
-src/: Python scripts for the Monte Carlo simulation.
-
-results/: Final prediction tables and visualizations.
+## 💻 Tech Stack
+* **Language:** Python
+* **Libraries:** Pandas, NumPy, Scikit-Learn, Matplotlib
+* **Methods:** Random Forest, Monte Carlo Simulation, XGBoost, Weighted Scoring.
